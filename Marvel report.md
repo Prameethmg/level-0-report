@@ -62,19 +62,6 @@ To create a more engaging and dynamic user experience, I then implemented **Java
 
 ## TASK 6: Writing Resource Article using Markdown
 
-**Markdown** is an easy-to-use markup language that is used with plain text to add formatting elements (such as headings, bulleted lists, and URLs) without the need for a formal text editor or HTML tags.  
-
-Markdown is **device agnostic** and displays the writing format consistently across different device types.  
-
-### Key Features of Markdown
-- Simple syntax, easy to learn  
-- Supports **headings**, **bold**, and *italic* text  
-- Can create **lists** (ordered and unordered)  
-- Can embed **links** and **images**  
-- Works across platforms and devices  
-
-### Example Link
-[Markdown Guide](## TASK 8: Writing Resource Article using Markdown
 
 **Markdown** is an easy-to-use markup language that is used with plain text to add formatting elements (such as headings, bulleted lists, and URLs) without the need for a formal text editor or HTML tags.  
 
@@ -310,6 +297,7 @@ Essentially, **VR aims to replace your reality**, while **AR seeks to enhance it
 I also got a chance to **explore VR at Marvel**, which provided a hands-on experience of immersive digital environments.  
 
 ![](https://github.com/Prameethmg/markdown-2/blob/main/vr.jpg?raw=true)
+
 
 
 
