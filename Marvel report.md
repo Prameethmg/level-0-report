@@ -15,16 +15,6 @@ To get a real feel for this, I built a **Random Dog Pic Generator**. The project
 
 Here are two random dog pictures:
 
-## TASK 2: API
-
-An **API (Application Programming Interface)** is just a way for different computer programs to communicate. Imagine one app needs information that another app has—the API acts as the go-between, taking a request and returning data in an organized format.  
-
-To get a real feel for this, I built a **Random Dog Pic Generator**. The project calls out to the public **Dog API**, which then sends back a URL for a random dog picture. My app then takes that URL and displays the image, showing exactly how an application can use an API to pull in content from an external source.  
-
-### Example Output
-
-Here are two random dog pictures:
-
 ![dog1](https://github.com/Prameethmg/markdown/blob/main/dog1.png?raw=true)   
 ![dog2](https://github.com/Prameethmg/markdown/blob/main/dog2.png?raw=true)
 
@@ -320,6 +310,7 @@ Essentially, **VR aims to replace your reality**, while **AR seeks to enhance it
 I also got a chance to **explore VR at Marvel**, which provided a hands-on experience of immersive digital environments.  
 
 ![](https://github.com/Prameethmg/markdown-2/blob/main/vr.jpg?raw=true)
+
 
 
 
