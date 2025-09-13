@@ -201,7 +201,7 @@ I had participated at **Impetus** this year in **Silico Hack** and **Think Tank*
 ![](https://github.com/Prameethmg/markdown-2/blob/main/think%20tank.png?raw=true)
 ![](https://github.com/Prameethmg/markdown-2/blob/main/silico%20hack.png?raw=true)
 
-## TASK 16: Datasheets Report Writing  
+## TASK 14: Datasheets Report Writing  
 ### Report on L293D Motor Driver IC  
 
 ---
@@ -310,6 +310,7 @@ Essentially, **VR aims to replace your reality**, while **AR seeks to enhance it
 I also got a chance to **explore VR at Marvel**, which provided a hands-on experience of immersive digital environments.  
 
 ![](https://github.com/Prameethmg/markdown-2/blob/main/vr.jpg?raw=true)
+
 
 
 
