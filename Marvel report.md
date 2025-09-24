@@ -100,6 +100,8 @@ The physical motor's performance ramping speed, stopping, and reversing identica
 ![](https://github.com/Prameethmg/markdown-2/blob/main/dc%20mootor%202.jpg?raw=true)
 ![](https://github.com/Prameethmg/markdown-2/blob/main/motor%2034.jpg?raw=true)
 
+video : https://youtu.be/tajwxlEgp14
+
 
 
 ## TASK 9: LED Toggle Using ESP32  
@@ -113,6 +115,8 @@ After uploading the code and obtaining the ESP32's **IP address** from the Seria
 
 ![](https://github.com/Prameethmg/markdown-2/blob/main/led%20toggle%2045.jpg?raw=true)
 ![](https://github.com/Prameethmg/markdown-2/blob/main/led%20toggle%2046.jpg?raw=true)
+
+video : https://youtu.be/V8kqYQiRj3Y
 
 
 ## TASK 10: Soldering Prerequisites  
@@ -196,94 +200,74 @@ I had participated at **Impetus** this year in **Silico Hack** and **Think Tank*
 ### Introduction  
 The **L293D** is a dual-channel **H-bridge motor driver IC** designed to control two DC motors independently or one stepper motor. Each channel functions as a full H-bridge, allowing motors to rotate forward, backward, or stop.  
 
-The IC can also drive other inductive loads such as solenoids, relays, and actuators. Because of its versatility, the L293D is widely used in **robotics, embedded systems, and automation projects**.  
+
+![](https://github.com/Prameethmg/markdown-2/blob/main/Screenshot%202025-09-24%20192258.png?raw=true)
+  
+
+
+### Description
+
+The L293D devices is quadruple high-
+current half-H drivers. The L293D is designed to
+provide bidirectional drive currents of up to 1 A at
+voltages from 4.5 V to 36 V. The L293D is designed
+to provide bidirectional drive currents of up to 600-mA
+at voltages from 4.5 V to 36 V. Both devices are
+designed to drive inductive loads such as relays,
+solenoids, DC and bipolar stepper motors, as well as
+other high-current/high-voltage loads in positive-
+supply applications.
+
+Each output is a complete totem-pole drive circuit,
+with a Darlington transistor sink and a pseudo-
+Darlington source. Drivers are enabled in pairs, with
+drivers 1 and 2 enabled by 1,2EN and drivers 3 and 4
+enabled by 3,4EN.
+
+The L293D is characterized for operation
+from 0°C to 70°C
 
 ---
 
 ### Key Features  
-- Dual H-bridge (2 channels)  
-- Motor voltage supply: **4.5V – 36V**  
-- Logic supply voltage: **5V**  
-- Continuous current: **600 mA per channel**  
-- Peak current: **1.2 A per channel**  
-- Internal kickback protection diodes  
-- Separate logic and motor supply pins  
+• Wide Supply-Voltage Range: 4.5 V to 36 V
+• Separate Input-Logic Supply 
+• Internal ESD Protection  
+• High-Noise-Immunity Inputs 
+• Output Current 600mA Per Channel  
+• Peak Output Current 1.2 A Per Channel 
+• Output Clamp Diodes for Inductive Transient Suppression
+    
+    
 
 ---
 
 ### Pin Configuration  
 
-**Diagram Description:**  
-The IC is a **16-pin DIP package**.  
-
-- Pins **1 & 9 (Enable pins):** Used to enable/disable each H-bridge.  
-- Pins **2, 7, 10, 15 (Input pins):** Logic signals from microcontroller.  
-- Pins **3, 6, 11, 14 (Output pins):** Connected to motor terminals.  
-- Pins **4, 5, 12, 13 (Ground pins):** Must be connected to GND.  
-- Pin **8 (Vcc2):** Motor supply voltage (4.5V–36V).  
-- Pin **16 (Vcc1):** Logic supply voltage (5V).  
-
-*(Draw the 16-pin layout with arrows showing inputs, outputs, and enable pins.)*  
-
----
-
-### Internal Protection and Current Handling  
-The L293D integrates **internal clamp diodes (kickback diodes)** to protect against back-EMF generated when motors are suddenly switched OFF.  
-
-- Continuous current: **600 mA per channel**  
-- Peak current: **1.2 A (short duration)**  
-- Suitable for **small to medium DC motors**  
+| Pin No.   | Symbol | Description                                     |
+| --------- | ------ | ----------------------------------------------- |
+| 1         | 1,2EN  | Enable pin for driver 1 & 2 (active HIGH)       |
+| 2         | 1A     | Input 1 for driver 1                            |
+| 3         | 1Y     | Output 1 (to motor)                             |
+| 4,5,12,13 | GND    | Ground (all must be connected)                  |
+| 6         | 2Y     | Output 2 (to motor)                             |
+| 7         | 2A     | Input 2 for driver 2                            |
+| 8         | VCC2   | Supply voltage for motor drivers (4.5 V – 36 V) |
+| 9         | 3,4EN  | Enable pin for driver 3 & 4 (active HIGH)       |
+| 10        | 3A     | Input 3 for driver 3                            |
+| 11        | 3Y     | Output 3 (to motor)                             |
+| 14        | 4Y     | Output 4 (to motor)                             |
+| 15        | 4A     | Input 4 for driver 4                            |
+| 16        | VCC1   | Logic supply voltage (typically 5V)             |
 
 
-![](https://how2electronics.com/wp-content/uploads/2022/08/L293D-Motor-Driver-IC.jpg)
----
+### Applications
 
-### H-Bridge Concept  
+• Stepper Motor Drivers
+• DC Motor Drivers 
+• Latching Relay Drivers
 
-**Diagram Description:**  
-- Draw an "H" circuit with 4 switches (**Q1, Q2, Q3, Q4**).  
-- Place the motor as the horizontal bar of the H.  
-- Show arrows of current direction for forward and reverse cases.  
-
-**Explanation:**  
-- **Forward:** Q1 & Q4 ON → current flows left to right.  
-- **Reverse:** Q2 & Q3 ON → current flows right to left.  
-- **Stop:** All OFF → motor idle.  
-- **Brake:** Q1 & Q3 ON or Q2 & Q4 ON → motor stops instantly.  
-
-The **H-bridge** makes the L293D capable of **bidirectional motor control**.  
-
-![](https://www.hackatronic.com/wp-content/uploads/2025/01/H-Bridge-Motor-Driver-Circuit-Diagram-.webp)
----
-
-### PWM (Pulse Width Modulation) for Speed Control  
-
-**Diagram Description:**  
-- Draw a PWM waveform showing **HIGH (ON)** and **LOW (OFF)** pulses.  
-- Show that duty cycle (**ON time ÷ Total time**) changes effective voltage.  
-
-**Explanation:**  
-- The L293D uses **PWM signals** applied to Enable pins (**EN1, EN2**) to control speed.  
-- **High Duty Cycle:** More ON time → motor spins faster.  
-- **Low Duty Cycle:** Less ON time → motor spins slower.  
-- Frequency: Typically a few kHz, ensuring **smooth motion without jerks**.  
-
----
-
-### Applications  
-- Robotics (wheel drive, robotic arms)  
-- Stepper motor control in **CNC and 3D printers**  
-- Conveyor belts and mechatronics systems  
-- Home automation (door locks, actuators)  
-- **Arduino/Raspberry Pi DIY projects**  
-
-![](https://circuitdigest.com/sites/default/files/projectimage_tut/Pulse-Width-Modulation.jpg)
----
-
-### Conclusion  
-The **L293D motor driver IC** is a **reliable and cost-effective solution** for controlling small to medium DC motors and stepper motors. With its built-in H-bridge configuration, **PWM compatibility**, and **internal protection diodes**, it provides both speed and direction control.  
-
-Its wide voltage range and current handling capacity make it one of the **most widely used motor drivers** in **educational, industrial, and embedded applications**.  
+ 
 
 
 ## Task 15: Introduction to VR  
@@ -297,6 +281,7 @@ Essentially, **VR aims to replace your reality**, while **AR seeks to enhance it
 I also got a chance to **explore VR at Marvel**, which provided a hands-on experience of immersive digital environments.  
 
 ![](https://github.com/Prameethmg/markdown-2/blob/main/vr.jpg?raw=true)
+
 
 
 
